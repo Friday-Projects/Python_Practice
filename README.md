@@ -2,6 +2,7 @@
 Projects to Practice Python
 
 Goal: Complete 12 projects by Jan. 31, 2021
+
 Video Inspiration and tutorial reference for project:
 
 Projects
