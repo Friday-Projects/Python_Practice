@@ -6,3 +6,20 @@
 #tell how many attempts it took when number is found
 
 import random
+
+def guess(x):
+  random_number = random.randint(1, x) #generate a random number between 1 and x
+  guess = 0
+  while guess != random_number: #continuous loop while guess is false
+    guess = int(input(f"Guess a number between 1 and {x} ")) #convert user input to integer
+    if guess > random_number:
+      print("Guess again. Your guess is too HIGH")
+    elif guess < random_number:
+      print("Guess again. Your guess is too LOW")
+
+  print("You got it!") #loop will break and print this if user guess is correct
+  print(f'The number was {random_number}')
+
+##Test
+#guess(10)
+  
