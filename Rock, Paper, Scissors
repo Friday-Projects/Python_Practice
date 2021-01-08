@@ -1,0 +1,32 @@
+#rock paper scissors
+#rock beats scissors, scissors beats paper, paper beats rock
+#def what is win and continue
+#def what is lose and continue
+#def tie and continue
+
+#count wins and loses
+
+import random
+
+def play():
+    user = input(f"Enter 'r' for rock, 'p' for paper, 's' for scissors: ")
+    computer = random.choice(['r', 'p', 's']) #computer will choose between list of 3 options
+    tie = 0
+    win = 0
+    lose = 0
+
+    if user == computer:
+        tie += 1
+        return 'tie'
+
+    if is_win(user, computer):
+        win += 1
+        return 'win'
+
+    lose += 1
+    return 'You lost!'
+
+def is_win(player, opp):
+    if (player == 'r' and opp == 's') or (player == 's' and opp == 'p') or \
+            (player == 'p' and opp == 'r'):
+        return True
