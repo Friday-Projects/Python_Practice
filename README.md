@@ -7,8 +7,8 @@ Video Inspiration and tutorial reference for project: https://www.youtube.com/wa
 
 Projects
 1. Madlibs
-2. Guess the Number (Computer)
-3. Guess the Number (User)
+2. Guess the Number (User)
+3. Guess the Number (Computer)
 4. Rock Paper Scissors
 5. Hangman
 6. Tic Tac Toe
