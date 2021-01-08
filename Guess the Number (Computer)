@@ -1,0 +1,22 @@
+#User think of a number and the computer will ask questions to narrow it down
+
+import random
+
+def computer_guess(x):
+    low = 1 #lower boung of guess
+    high = x #upper bound of guess
+    feedback = ''
+    count = 0
+    while feedback != 'c':
+        guess = random.randint(low, high)
+        feedback = input(f'Is {guess} too HIGH (h), too LOW (l), or CORRECT (c)')
+        if feedback == 'h':
+            high = guess - 1
+        elif feedback == 'l':
+            low = guess - 1
+        count += 1
+
+
+    print(f'Computer determines that {guess} is your number after {count} tries.')
+
+computer_guess(100)
