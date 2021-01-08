@@ -1,4 +1,5 @@
 #User think of a number and the computer will ask questions to narrow it down
+#count how many tries the computer takes to guess number
 
 import random
 
