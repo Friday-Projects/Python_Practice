@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+
+#generate a random number with python
+#user will input a guess of the number
+#program will verify if number is >, < or = to random generated number
+#tell how many attempts it took when number is found
+
+import random
