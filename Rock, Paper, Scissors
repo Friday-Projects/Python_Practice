@@ -8,20 +8,26 @@
 
 import random
 
+def gamemode():
+    mode = ''
+    while mode != 'e':
+        start = input("Press enter to start game or enter e to exit game")
+        print(play())
+
 def play():
     user = input(f"Enter 'r' for rock, 'p' for paper, 's' for scissors: ")
     computer = random.choice(['r', 'p', 's']) #computer will choose between list of 3 options
-    tie = 0
-    win = 0
-    lose = 0
+    #tie = 0
+    #win = 0
+    #lose = 0
 
     if user == computer:
-        tie += 1
-        return 'tie'
+        #tie += 1
+        return 'It\'s a tie'
 
     if is_win(user, computer):
-        win += 1
-        return 'win'
+        #win += 1
+        return 'You win!'
 
     lose += 1
     return 'You lost!'
@@ -30,3 +36,5 @@ def is_win(player, opp):
     if (player == 'r' and opp == 's') or (player == 's' and opp == 'p') or \
             (player == 'p' and opp == 'r'):
         return True
+        
+#gamemode()        
