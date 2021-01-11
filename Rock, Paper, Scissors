@@ -1,10 +1,5 @@
-#rock paper scissors
-#rock beats scissors, scissors beats paper, paper beats rock
-#def what is win and continue
-#def what is lose and continue
-#def tie and continue
-
 #count wins and loses
+    ## counter is not working
 
 import random
 
