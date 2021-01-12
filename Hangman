@@ -13,15 +13,15 @@ import string
 
 word_bank = ['aardvark', 'arthur', 'buster', 'francine']
 alphabet = set(string.ascii_lowercase)
-lives = int('5')
 
 
 def hangman():
     random_word = random.choice(word_bank)
     letters_in_word = set(random_word)
     used_letters = set()
+    lives = 5
 
-    while len(letters_in_word) > 0:
+    while len(letters_in_word) > 0 and lives > 0:
         print('You have used these letters: ', ' '.join(used_letters))
 
         # current word in '-' (W - R D)
@@ -37,11 +37,18 @@ def hangman():
         # if users choice is in the word, remove the letter from word
             if user_choice in letters_in_word:
                 letters_in_word.remove(user_choice)
+            else:
+                lives = lives - 1
+
     # if guessed letter has been used before, prompt guess new letter
         elif user_choice in used_letters:
             print('You have already used this letter. Guess a different letter.')
         else:
         # if guess is not a letter, prompt guess a real letter
             print('Please choose a valid letter from English alphabet')
+    if lives == 0:
+        print('You have run out of lives. Game Over.')
+    else:
+        print(f'Congrats on guess the word {random_word}')
 
 hangman()
