@@ -1,1 +1,35 @@
+# computer picks a word at random from a list of words
+# user enters valid alphabet letter
+    #if letter is not part of word, user lose 1 life
+    # -5 life ends the game and comp reveals word
+    # give user choice to start with a new word
 
+# if correct, populate letter of word and show blanks
+# used letters go to list of used letters that cannot be entered again
+    #user prompted to enter new letter if attempt to reuse used letters
+
+import random
+
+word_bank = ['aardvark', 'arthur', 'buster', 'francine']
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+lives = int('5')
+
+def hangman():
+    random_word = random.choice(word_bank)
+    letters_in_word = set(random_word)
+    used_letters = set()
+
+    user_choice = input(f'You have {lives} lives. Please guess a letter.').lower()
+    #if letter chosen is in alphabet and not in used_letters
+    if user_choice in alphabet - used_letters:
+        #add to used letters set
+        used_letters.add(user_choice)
+        #if users choice is in the word, remove the letter from word
+        if user_choice in letters_in_word:
+            letters_in_word.remove(user_letters)
+    # if guessed letter has been used before, prompt guess new letter
+    elif user_choice in used_letters:
+        print('You have already used this letter. Guess a different letter.')
+    else:
+        #if guess is not a letter, prompt guess a real letter
+        print('Please choose a valid letter from English alphabet')
