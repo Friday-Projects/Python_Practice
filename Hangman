@@ -9,10 +9,10 @@
 # user prompted to enter new letter if attempt to reuse used letters
 
 import random
+import string
 
 word_bank = ['aardvark', 'arthur', 'buster', 'francine']
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-            'v', 'w', 'x', 'y', 'z']
+alphabet = set(string.ascii_lowercase)
 lives = int('5')
 
 
@@ -31,12 +31,12 @@ def hangman():
 
         user_choice = input(f'You have {lives} lives. Please guess a letter.').lower()
     # if letter chosen is in alphabet and not in used_letters
-        if user_choice in alphabet and used_letters:
+        if user_choice in alphabet and user_choice not in used_letters:
         # add to used letters set
             used_letters.add(user_choice)
         # if users choice is in the word, remove the letter from word
-        if user_choice in letters_in_word:
-            letters_in_word.remove(user_choice)
+            if user_choice in letters_in_word:
+                letters_in_word.remove(user_choice)
     # if guessed letter has been used before, prompt guess new letter
         elif user_choice in used_letters:
             print('You have already used this letter. Guess a different letter.')
