@@ -19,6 +19,14 @@ def hangman():
     letters_in_word = set(random_word)
     used_letters = set()
 
+    while len(letters_in_word) > 0:
+        print('You have used these letters: ', ' '.join(used_letters))
+
+        # current word in '-' (W - R D)
+        # '-' if letter has not been guessed
+        word_list = [letter if letter in used_letters else '-' for letter in random_word]
+        print('Current Word: ', ' '.join(word_list))
+
     user_choice = input(f'You have {lives} lives. Please guess a letter.').lower()
     #if letter chosen is in alphabet and not in used_letters
     if user_choice in alphabet - used_letters:
