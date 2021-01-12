@@ -49,6 +49,6 @@ def hangman():
     if lives == 0:
         print('You have run out of lives. Game Over.')
     else:
-        print(f'Congrats on guess the word {random_word}')
+        print(f'Congrats on guessing the word: {random_word}')
 
 hangman()
