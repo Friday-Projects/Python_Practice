@@ -34,7 +34,7 @@ def hangman():
         used_letters.add(user_choice)
         #if users choice is in the word, remove the letter from word
         if user_choice in letters_in_word:
-            letters_in_word.remove(user_letters)
+            letters_in_word.remove(user_choice)
     # if guessed letter has been used before, prompt guess new letter
     elif user_choice in used_letters:
         print('You have already used this letter. Guess a different letter.')
