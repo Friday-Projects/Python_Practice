@@ -27,3 +27,20 @@ def inputplayerletter():
             return ['O', 'X']
         #[player, computer]
         
+ def iswin(position, letter):
+    return ((position['top-L'] == letter and position['top-M'] == letter and position['top-R'] == letter) or # across the top
+            # across the middle
+            (position['mid-L'] == letter and position['mid-M'] == letter and position['mid-R'] == letter) or
+            # across the bottom
+            (position['bot-L'] == letter and position['bot-M'] == letter and position['bot-R'] == letter) or
+            # down the left column
+            (position['top-L'] == letter and position['mid-L'] == letter and position['bot-L'] == letter) or
+            # down the middle column
+            (position['top-M'] == letter and position['mid-M'] == letter and position['bot-M'] == letter) or
+            # down the right column
+            (position['top-R'] == letter and position['mid-R'] == letter and position['bot-R'] == letter) or
+            # diagonal from top-L to bot-R
+            (position['top-L'] == letter and position['mid-M'] == letter and position['bot-R'] == letter) or
+            # diagonal from bot-L to top-R
+            (position['bot-L'] == letter and position['mid-M'] == letter and position['top-R'] == letter))       
+        
