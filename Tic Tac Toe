@@ -2,6 +2,7 @@
 # 3x3 board, 3 in row wins
 #Player chooses x or o
 #computer will default to opposite
+#nice format from automate the boring stuff
 
 
 game_board = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ','bot-L': ' ', 'bot-M': ' ', 'bot-R': ' '}
@@ -25,3 +26,4 @@ def inputplayerletter():
         else:
             return ['O', 'X']
         #[player, computer]
+        
