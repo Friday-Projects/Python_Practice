@@ -1,1 +1,27 @@
+#Tic Tac Toe
+# 3x3 board, 3 in row wins
+#Player chooses x or o
+#computer will default to opposite
 
+
+game_board = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ','bot-L': ' ', 'bot-M': ' ', 'bot-R': ' '}
+# 3 rows (top, mid, bot) 3 position per row (L, M, R)
+
+def makeboard(board):
+    print(board['top-L'] + '| ' + board['top-M'] + '| ' + board['top-R'])
+    print('______')
+    print(board['mid-L'] + '| ' + board['mid-M'] + '| ' + board['mid-R'])
+    print('______')
+    print(board['bot-L'] + '| ' + board['bot-M'] + '| ' + board['bot-R'])
+
+def inputplayerletter():
+    letter = ''
+    while not (letter == 'X' or letter == 'O'):
+        print('Do you want to be X or O')
+        letter = input().upper()
+        #player chooses their letter. letter capitalized with .upper()
+        if letter == 'X':
+            return ['X', 'O']
+        else:
+            return ['O', 'X']
+        #[player, computer]
